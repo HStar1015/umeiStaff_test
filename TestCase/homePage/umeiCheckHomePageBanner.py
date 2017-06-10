@@ -33,9 +33,7 @@ class umeiCheckHomePageBanner(unittest.TestCase):
                 self.driver.swipe(x_start,y,x_end,y)
                 sleep(2)
                 print "swiping..."
-            # #向左滑动
-            # for i in  range(0,1):
-            #     self.driver.swipe(x_start,y,x_end,y)
+
             sleep(3)
             banner.click()
             sleep(5)

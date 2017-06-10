@@ -1,7 +1,6 @@
 #-*-coding:utf-8 -*-
 import HTMLTestRunner
 import unittest
-from api_main_tests import core_server_tests
 import time
 import sys
 import os
@@ -16,6 +15,10 @@ from homePage import umeiCheckMarketingActivity
 from homePage import umeiCheckOrder
 from homePage import  umeiAddOrder
 from projecManage import umeiCheckProject
+from  personalCenter import  umeiChangePersonalInfo
+from  personalCenter import  umeiCheckShop
+from  personalCenter import  umeiUserComment
+
 reload(sys)
 sys.setdefaultencoding('utf8')
 
@@ -118,6 +121,9 @@ if __name__=="__main__":
     suite.addTest(unittest.makeSuite(umeiCheckMarketingActivity.umeiCheckMarketingActivity))
     suite.addTest(unittest.makeSuite(umeiAddOrder.umeiAddOrder))
     suite.addTest(unittest.makeSuite(umeiCheckProject.umeiCheckProject))
+    suite.addTest(unittest.makeSuite(umeiChangePersonalInfo.umeiChangePersonalInfo))
+    suite.addTest(unittest.makeSuite(umeiUserComment.umeiUserComment))
+    suite.addTest(unittest.makeSuite(umeiCheckShop.umeiCheckShop))
     #生成与执行时间相同的测试报告
     now = time.strftime('%Y-%m-%d_%H_%M_%S_')
     filename = test_report_dir + '\\' + now + 'result.html'

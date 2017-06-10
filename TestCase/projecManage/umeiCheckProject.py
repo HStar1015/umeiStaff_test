@@ -23,6 +23,7 @@ class umeiCheckProject(unittest.TestCase):
             project = self.driver.find_element_by_name("项目管理")
             project.click()
             umeiCutScreenShot.cutScreenShot()
+
             #有项目时删除一项
             pro_detail = self.driver.find_element_by_xpath("//android.support.v7.widget.RecyclerView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]")
             pro_detail.click()
@@ -32,6 +33,7 @@ class umeiCheckProject(unittest.TestCase):
             btn_ok = self.driver.find_element_by_id("com.staff:id/btn_ok")
             btn_ok.click()
             sleep(3)
+
             #添加项目
             btn_add = self.driver.find_element_by_id("com.staff:id/tv_right")
             btn_add.click()
@@ -43,3 +45,9 @@ class umeiCheckProject(unittest.TestCase):
             umeiCutScreenShot.cutScreenShot()
         except Exception,e:
             print  traceback.format_exc()
+
+def suite(self):
+    suite = unittest.TestSuite()
+    suite.addTest(umeiCheckProject("test_umeiCheckProject"))
+    runner = unittest.TextTestRunner()
+    runner.run(suite)
