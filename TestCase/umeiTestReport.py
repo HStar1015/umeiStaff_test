@@ -15,7 +15,7 @@ from homePage import umeiCheckWorkPlan
 from homePage import umeiCheckMarketingActivity
 from homePage import umeiCheckOrder
 from homePage import  umeiAddOrder
-from homePage import  umeiAddDaySummary
+from projecManage import umeiCheckProject
 reload(sys)
 sys.setdefaultencoding('utf8')
 
@@ -117,7 +117,7 @@ if __name__=="__main__":
     suite.addTest(unittest.makeSuite(umeiCheckWorkPlan.umeiCheckWorkPlan))
     suite.addTest(unittest.makeSuite(umeiCheckMarketingActivity.umeiCheckMarketingActivity))
     suite.addTest(unittest.makeSuite(umeiAddOrder.umeiAddOrder))
-    suite.addTest(unittest.makeSuite(umeiAddDaySummary.umeiAddDaySummary))
+    suite.addTest(unittest.makeSuite(umeiCheckProject.umeiCheckProject))
     #生成与执行时间相同的测试报告
     now = time.strftime('%Y-%m-%d_%H_%M_%S_')
     filename = test_report_dir + '\\' + now + 'result.html'

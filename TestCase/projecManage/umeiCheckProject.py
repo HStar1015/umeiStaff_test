@@ -19,3 +19,27 @@ class umeiCheckProject(unittest.TestCase):
 
     def test_checkProject(self):
         sleep(2)
+        try:
+            project = self.driver.find_element_by_name("项目管理")
+            project.click()
+            umeiCutScreenShot.cutScreenShot()
+            #有项目时删除一项
+            pro_detail = self.driver.find_element_by_xpath("//android.support.v7.widget.RecyclerView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]")
+            pro_detail.click()
+            sleep(2)
+            btn_delete = self.driver.find_element_by_id("com.staff:id/tv_delete")
+            btn_delete.click()
+            btn_ok = self.driver.find_element_by_id("com.staff:id/btn_ok")
+            btn_ok.click()
+            sleep(3)
+            #添加项目
+            btn_add = self.driver.find_element_by_id("com.staff:id/tv_right")
+            btn_add.click()
+            sleep(4)
+            sel_pro = self.driver.find_element_by_xpath("//android.support.v7.widget.RecyclerView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.ImageView[2]")
+            sel_pro.click()
+            btn_tianjia = self.driver.find_element_by_id("com.staff:id/btn_tianjia")
+            btn_tianjia.click()
+            umeiCutScreenShot.cutScreenShot()
+        except Exception,e:
+            print  traceback.format_exc()

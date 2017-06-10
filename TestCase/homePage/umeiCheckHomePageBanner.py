@@ -23,7 +23,7 @@ class umeiCheckHomePageBanner(unittest.TestCase):
             print  "start test_checkHomePageBanner test..."
             sleep(3)
             #获取banner元素
-            banner = self.driver.find_element_by_id("com.staff:id/cbLoopViewPager")
+            banner = self.driver.find_element_by_id("com.staff:id/simpleDraweeView")
             width = self.driver.get_window_size().get('width')
             height = self.driver.get_window_size().get("height")
             x_start = 540*width/720
@@ -38,7 +38,7 @@ class umeiCheckHomePageBanner(unittest.TestCase):
             #     self.driver.swipe(x_start,y,x_end,y)
             sleep(3)
             banner.click()
-            sleep(3)
+            sleep(5)
             umeiCutScreenShot.cutScreenShot()
         except Exception,e:
             print traceback.format_exc()

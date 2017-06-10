@@ -1,16 +1,15 @@
-#-*-coding:utf-8-*-
-from  appium import  webdriver
-from  TestCase.common import umeiInitLogin
-from TestCase.common import umeiCutScreenShot
+#-*-coding:utf-8 -*-
+from appium import webdriver
+from  time import  sleep
+import unittest
+import traceback
 from  TestCase.common import umeiInitialize
-from time import  sleep
-import  traceback
-import  unittest
-import umeiCheckOrder
+from  TestCase.common import umeiCutScreenShot
+
 class umeiAddOrder(unittest.TestCase):
     def __init__(self,methodName):
         unittest.TestCase.__init__(self,methodName)
-        print "**********************************addOrder test******************************"
+        print "***************addOrder test************************"
 
     def setUp(self):
         umeiInitialize.setUp(self)
@@ -19,40 +18,32 @@ class umeiAddOrder(unittest.TestCase):
         umeiInitialize.tearDown(self)
 
     def test_addOrder(self):
+        sleep(3)
         try:
-            print "start test_addOrder test..."
-            sleep(2)
-            btn_order = self.driver.find_element_by_id("com.staff:id/iv4")
-            btn_order.click()
-            sleep(2)
-            txt_name = self.driver.find_element_by_id("com.staff:id/et_customer_name")
-            txt_name.click()
-            txt_name.send_keys("Test")
-            txt_phone = self.driver.find_element_by_id("com.staff:id/et_customer_phone")
-            txt_phone.click()
-            txt_phone.send_keys("15651966757")
-            btn_select = self.driver.find_element_by_name("选择项目")
-            btn_select.click()
+            '''缺少选择顾客的操作'''
+            btn_adOr = self.driver.find_element_by_id("com.staff:id/iv4")
+            btn_adOr.click()
+            sleep(3)
+            selectProject = self.driver.find_element_by_id("com.staff:id/ll_select_pro")
+            selectProject.click()
             sleep(5)
-            btn_ok = self.driver.find_element_by_xpath("//android.support.v7.widget.RecyclerView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.ImageView[2]")
-            btn_ok.click()
-            sleep(2)
-            btn_fee = self.driver.find_element_by_id("com.staff:id/smoothCheckBoxOne")
-            btn_fee.click()
-            sleep(2)
-            btn_time = self.driver.find_element_by_xpath("//android.support.v7.widget.RecyclerView[1]/android.widget.LinearLayout[4]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]")
-            btn_time.click()
-            btn_submit = self.driver.find_element_by_id("com.staff:id/btn_submit")
-            btn_submit.click()
-            sleep(2)
-            btn_sure = self.driver.find_element_by_id("android:id/button1")
-            btn_sure.click()
-            sleep(2)
+            selPro = self.driver.find_element_by_xpath("//android.support.v7.widget.RecyclerView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.ImageView[2]")
+            selPro.click()
+            checkBox = self.driver.find_element_by_id("com.staff:id/smoothCheckBoxOne")
+            checkBox.click()
+            sel_tomor  = self.driver.find_element_by_name("明天")
+            sel_tomor.click()
+            sel_time = self.driver.find_element_by_xpath("//android.support.v7.widget.RecyclerView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]")
+            sel_time.click()
             umeiCutScreenShot.cutScreenShot()
+            sleep(2)
+            btn_submit = self.driver.find_element_by_id("android.widget.RelativeLayout")
+            btn_submit.click()
         except Exception,e:
             print traceback.format_exc()
+
 def suite(self):
-    suite = unittest.TestSuite()
+    suite = unittest.TestSuite
     suite.addTest(umeiAddOrder("test_addOrder"))
-    runner = unittest.TextTestRunner
+    runner = unittest.TextTestRunner()
     runner.run(suite)

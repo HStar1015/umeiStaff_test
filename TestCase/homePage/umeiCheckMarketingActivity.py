@@ -23,8 +23,8 @@ class umeiCheckMarketingActivity(unittest.TestCase):
         try:
             print "start chekcMarktingActivity test..."
             sleep(2)
-            btn_actvity = self.driver.find_element_by_id("com.staff:id/iv3")
-            btn_actvity.click()
+            btn_activity = self.driver.find_element_by_id("com.staff:id/iv3")
+            btn_activity.click()
             sleep(2)
             umeiCutScreenShot.cutScreenShot()
         except Exception,e:
