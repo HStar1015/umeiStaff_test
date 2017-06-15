@@ -111,7 +111,9 @@ if __name__=="__main__":
     # 不用绝对路径会报：ImportError: Start directory is not importable: './test_case'
     test_dir = 'D:\\hanxing\\study\umeiStaff_test\\TestCase'
     # 知道测试报告的路径
-    test_report_dir = 'D:\\hanxing\\study\\umeiStaff_test\\report'
+    test_report_dir = 'D:\\hanxing\\study\\umeiStaff_test\\TestCase\\report'
+
+
     # 包装测试用例
     suite = unittest.TestSuite()
     suite.addTest(unittest.makeSuite(umeiLogin.umeiLogin))
@@ -125,6 +127,8 @@ if __name__=="__main__":
     suite.addTest(unittest.makeSuite(umeiUserComment.umeiUserComment))
     suite.addTest(unittest.makeSuite(umeiCheckShop.umeiCheckShop))
     #生成与执行时间相同的测试报告
+
+
     now = time.strftime('%Y-%m-%d_%H_%M_%S_')
     filename = test_report_dir + '\\' + now + 'result.html'
     fp = open(filename, 'wb')
