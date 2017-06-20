@@ -23,21 +23,20 @@ class umeiLogin(unittest.TestCase):
     def test_login(self):
         try:
             print "Start to test_login test....."
-            umeiInitLogin.init_logout(self)
+            # umeiInitLogin.init_logout(self)
             sleep(5)
             txt_phone = self.driver.find_element_by_id("com.staff:id/et_phone")
             txt_phone.clear()
             txt_phone.send_keys("15850766382")
-            self.driver.back()
+
             sleep(2)
             txt_pwd = self.driver.find_element_by_id("com.staff:id/et_password")
             txt_pwd.click()
             txt_pwd.send_keys("123456")
-            self.driver.back()
             sleep(2)
             btn_login = self.driver.find_element_by_id("com.staff:id/btn_login")
             btn_login.click()
-            sleep(3)
+            sleep(5)
             umeiCutScreenShot.cutScreenShot()
             print "Succeed to excute this case..."
         except Exception,e:

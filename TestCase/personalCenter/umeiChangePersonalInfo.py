@@ -47,16 +47,6 @@ class umeiChangePersonalInfo(unittest.TestCase):
             btn_ok.click()
             sleep(2)
 
-            #修改姓名
-            txt_name = self.driver.find_element_by_id("com.staff:id/tv_two")
-            txt_name.click()
-            edit_name = self.driver.find_element_by_id("com.staff:id/et_name")
-            edit_name.clear()
-            edit_name.send_keys(u"美容师")
-            save_name = self.driver.find_element_by_id("com.staff:id/tv_right")
-            save_name.click()
-
-
             #修改工作年限
             sel_year = self.driver.find_element_by_id("com.staff:id/tv_seven")
             sel_year.click()

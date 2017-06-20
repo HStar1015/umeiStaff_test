@@ -17,7 +17,7 @@ class umeiCheckDayOrder(unittest.TestCase):
         umeiInitialize.tearDown(self)
 
     def test_checkDayOrder(self):
-        sleep(2)
+        sleep(5)
         try:
             #查看今日预约
             btn_today = self.driver.find_element_by_id("com.staff:id/ll_today_appointment")

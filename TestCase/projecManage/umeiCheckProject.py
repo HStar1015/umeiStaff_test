@@ -30,7 +30,8 @@ class umeiCheckProject(unittest.TestCase):
             sleep(2)
             btn_delete = self.driver.find_element_by_id("com.staff:id/tv_delete")
             btn_delete.click()
-            btn_ok = self.driver.find_element_by_id("com.staff:id/btn_ok")
+            sleep(2)
+            btn_ok = self.driver.find_element_by_id("android:id/button1")
             btn_ok.click()
             sleep(3)
 

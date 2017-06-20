@@ -9,12 +9,20 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.header import Header
 from login import umeiLogin
+from homePage import umeiCheckDayOrder
 from homePage import umeiCheckHomePageBanner
 from homePage import umeiCheckWorkPlan
 from homePage import umeiCheckMarketingActivity
 from homePage import umeiCheckOrder
 from homePage import  umeiAddOrder
+
 from projecManage import umeiCheckProject
+
+from customerManage import  umeiDeleteCustomer
+from customerManage import umeiAddCustomer
+from  customerManage import  umeiCheckCutomer
+from customerManage import  umeiEditCustomer
+
 from  personalCenter import  umeiChangePersonalInfo
 from  personalCenter import  umeiCheckShop
 from  personalCenter import  umeiUserComment
@@ -116,16 +124,29 @@ if __name__=="__main__":
 
     # 包装测试用例
     suite = unittest.TestSuite()
+    #登录操作
     suite.addTest(unittest.makeSuite(umeiLogin.umeiLogin))
+    #首页相关
+    suite.addTest(unittest.makeSuite(umeiCheckDayOrder.umeiCheckDayOrder))
     suite.addTest(unittest.makeSuite(umeiCheckHomePageBanner.umeiCheckHomePageBanner))
     suite.addTest(unittest.makeSuite(umeiCheckOrder.umeiCheckOrder))
-    suite.addTest(unittest.makeSuite(umeiCheckWorkPlan.umeiCheckWorkPlan))
-    suite.addTest(unittest.makeSuite(umeiCheckMarketingActivity.umeiCheckMarketingActivity))
     suite.addTest(unittest.makeSuite(umeiAddOrder.umeiAddOrder))
+    suite.addTest(unittest.makeSuite(umeiCheckMarketingActivity.umeiCheckMarketingActivity))
+
+    #项目管理
     suite.addTest(unittest.makeSuite(umeiCheckProject.umeiCheckProject))
+
+    #顾客管理
+    suite.addTest(unittest.makeSuite(umeiCheckCutomer.umeiCheckCustomer))
+    suite.addTest(unittest.makeSuite(umeiAddCustomer.umeiAddCustomer))
+    suite.addTest(unittest.makeSuite(umeiEditCustomer.umeiEditCustomer))
+    suite.addTest(unittest.makeSuite(umeiDeleteCustomer.umeiDeleteCustomer))
+
+    #我的界面操作
     suite.addTest(unittest.makeSuite(umeiChangePersonalInfo.umeiChangePersonalInfo))
     suite.addTest(unittest.makeSuite(umeiUserComment.umeiUserComment))
     suite.addTest(unittest.makeSuite(umeiCheckShop.umeiCheckShop))
+
     #生成与执行时间相同的测试报告
 
 

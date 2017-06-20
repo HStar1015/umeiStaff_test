@@ -1,7 +1,6 @@
 #-*- coding:utf-8 -*-
 from appium import webdriver
 from  TestCase.common import umeiInitialize
-from  TestCase.common import  umeiInitLogin
 from  TestCase.common import  umeiCutScreenShot
 from  time import  sleep
 import  traceback
@@ -25,7 +24,6 @@ class umeiCheckMarketingActivity(unittest.TestCase):
             sleep(2)
             btn_activity = self.driver.find_element_by_id("com.staff:id/iv3")
             btn_activity.click()
-            self.driver.sendKeyEvent(4)
             sleep(5)
             umeiCutScreenShot.cutScreenShot()
         except Exception,e:
