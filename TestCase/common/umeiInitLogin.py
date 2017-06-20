@@ -10,7 +10,7 @@ def init_login(self):
     time.sleep(3)
     txt_phone = self.driver.find_element_by_id("com.staff:id/et_phone")
     txt_phone.click()
-    txt_phone.send_keys("18112656817")
+    txt_phone.send_keys("15850766382")
 
     txt_pwd = self.driver.find_element_by_id("com.staff:id/et_password")
     txt_pwd.click()

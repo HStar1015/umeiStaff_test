@@ -27,7 +27,7 @@ class umeiLogin(unittest.TestCase):
             sleep(5)
             txt_phone = self.driver.find_element_by_id("com.staff:id/et_phone")
             txt_phone.clear()
-            txt_phone.send_keys("18112656817")
+            txt_phone.send_keys("15850766382")
             self.driver.back()
             sleep(2)
             txt_pwd = self.driver.find_element_by_id("com.staff:id/et_password")
