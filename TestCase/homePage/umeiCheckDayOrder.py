@@ -33,6 +33,7 @@ class umeiCheckDayOrder(unittest.TestCase):
             print traceback.format_exc()
 
 def suite(self):
+
     suite = unittest.TestSuite()
     suite.addTest(umeiCheckDayOrder("test_checkDayOrder"))
     runner = unittest.TextTestRunner
